@@ -1,6 +1,6 @@
 package main
 
-import "simple-blacklist/cmd"
+import "github.com/fekle/simple-blacklist/cmd"
 
 func main() {
 	cmd.Execute()

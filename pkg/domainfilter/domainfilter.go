@@ -1,9 +1,10 @@
 package domainfilter
 
 import (
-	"golang.org/x/sync/errgroup"
 	"sort"
 	"sync"
+
+	"golang.org/x/sync/errgroup"
 )
 
 // FilterFn implements a filter function

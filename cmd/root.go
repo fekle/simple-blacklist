@@ -1,17 +1,18 @@
 package cmd
 
 import (
-	"simple-blacklist/pkg/blacklist"
 	"fmt"
-	"github.com/olekukonko/tablewriter"
-	"github.com/spf13/cobra"
-	"golang.org/x/sync/errgroup"
 	"log"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/fekle/simple-blacklist/pkg/blacklist"
+	"github.com/olekukonko/tablewriter"
+	"github.com/spf13/cobra"
+	"golang.org/x/sync/errgroup"
 )
 
 var urlList []string

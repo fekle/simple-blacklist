@@ -1,4 +1,4 @@
-module simple-blacklist
+module github.com/fekle/simple-blacklist
 
 go 1.13
 

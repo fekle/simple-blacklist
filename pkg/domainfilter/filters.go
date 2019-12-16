@@ -1,9 +1,10 @@
 package domainfilter
 
 import (
-	"golang.org/x/net/publicsuffix"
 	"regexp"
 	"strings"
+
+	"golang.org/x/net/publicsuffix"
 )
 
 var (
