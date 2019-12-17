@@ -54,3 +54,16 @@ func HasValidTLDFilter(in string) []string {
 func LeadingDotToWildcard(in string) []string {
 	return []string{leadingDotExp.ReplaceAllLiteralString(in, "*.")}
 }
+
+// ExactPrefixFilter prepends exact matches with the given prefix
+func ExactPrefixFilter(prefix string) func(in string) []string {
+	if len(prefix) > 0 {
+		return func(in string) []string {
+			if !strings.Contains(in, "*") {
+				return []string{prefix + in}
+			}
+			return []string{in}
+		}
+	}
+	return nil
+}

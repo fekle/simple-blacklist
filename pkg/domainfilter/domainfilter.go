@@ -15,6 +15,10 @@ func Filter(filters []FilterFn, input []string) (output []string, err error) {
 	output = input
 
 	for _, f := range filters {
+		if f == nil {
+			continue
+		}
+
 		var tmp []string
 		var tmpMutex sync.Mutex
 

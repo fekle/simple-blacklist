@@ -24,7 +24,7 @@ func NewBlacklist(source string) *Blacklist {
 }
 
 // Process fetches all the domains in a blacklist source and filters them, keeping all unique results
-func (bl *Blacklist) Process() error {
+func (bl *Blacklist) Process(exactPrefix string) error {
 	lines, err := fetchlist.Fetch(bl.Source)
 	if err != nil {
 		return err
@@ -38,6 +38,7 @@ func (bl *Blacklist) Process() error {
 		domainfilter.ExtractNoSpaceGroupsFilter,
 		domainfilter.HasValidTLDFilter,
 		domainfilter.LeadingDotToWildcard,
+		domainfilter.ExactPrefixFilter(exactPrefix),
 	}, lines); err != nil {
 		panic(err)
 	}

@@ -10,9 +10,10 @@ Usage:
   simple-blacklist [flags]
 
 Flags:
-  -h, --help            help for simple-blacklist
-  -o, --output string   path to write final blacklist to
-  -u, --url strings     comma-separated list of urls
+  -e, --exactPrefix string   prefix to prepend to non-wildcard entries
+  -h, --help                 help for simple-blacklist
+  -o, --output string        path to write final blacklist to
+  -u, --url strings          comma-separated list of urls
 ```
 
 ## Examples

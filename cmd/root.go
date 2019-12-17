@@ -17,6 +17,7 @@ import (
 
 var urlList []string
 var outPath string
+var exactPrefix string
 
 // rootCmd defines the root command for this app
 var rootCmd = &cobra.Command{
@@ -52,7 +53,7 @@ var rootCmd = &cobra.Command{
 				bl := blacklist.NewBlacklist(blacklistURL)
 
 				// fetch and filter blacklist
-				if err := bl.Process(); err != nil {
+				if err := bl.Process(exactPrefix); err != nil {
 					return err
 				}
 
@@ -94,6 +95,8 @@ func init() {
 
 	rootCmd.Flags().StringVarP(&outPath, "output", "o", "", "path to write final blacklist to")
 	rootCmd.MarkFlagRequired("outPath")
+
+	rootCmd.Flags().StringVarP(&exactPrefix, "exactPrefix", "e", "", "prefix to prepend to non-wildcard entries")
 }
 
 // Execute runs the cobra root app
