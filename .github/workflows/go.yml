@@ -16,14 +16,16 @@ jobs:
 
       - name: Build
         run: |
+          rm -rf ./build
+
           CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./build/simple-blacklist-linux-amd64
-          gzip -q ./build/simple-blacklist-linux-amd64
+          gzip -f -q ./build/simple-blacklist-linux-amd64
 
           CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o ./build/simple-blacklist-linux-arm64
-          gzip -q ./build/simple-blacklist-linux-arm64
+          gzip -f -q ./build/simple-blacklist-linux-arm64
 
           CGO_ENABLED=0 GOOS=linux GOARCH=arm go build -o ./build/simple-blacklist-linux-arm
-          gzip -q ./build/simple-blacklist-linux-arm
+          gzip -f -q ./build/simple-blacklist-linux-arm
 
       - name: Create Release
         id: create_release
