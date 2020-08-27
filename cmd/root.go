@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/fekle/simple-blacklist/pkg/blacklist"
+	"simple-blacklist/pkg/blacklist"
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 	"golang.org/x/sync/errgroup"

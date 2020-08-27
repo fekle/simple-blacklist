@@ -1,8 +1,8 @@
 package blacklist
 
 import (
-	"github.com/fekle/simple-blacklist/pkg/domainfilter"
-	"github.com/fekle/simple-blacklist/pkg/fetchlist"
+	"simple-blacklist/pkg/domainfilter"
+	"simple-blacklist/pkg/fetchlist"
 )
 
 // Blacklist holds all required information while fetching, filtering and merging blacklists
